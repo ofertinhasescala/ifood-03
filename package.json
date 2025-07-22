@@ -1,0 +1,26 @@
+{
+  "name": "mercado-livre-card-landing",
+  "version": "1.0.0",
+  "description": "Landing page para captação de leads do cartão Mercado Livre",
+  "main": "ml/1/index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "external": {
+      "font-awesome": "6.5.1",
+      "google-fonts-sora": "400,700",
+      "jquery": "3.6.0",
+      "jquery-mask": "1.14.16",
+      "utmify-scripts": "latest"
+    }
+  },
+  "apis": {
+    "cpf-validation": "https://encurtaapi.com/api/typebot",
+    "cep-primary": "https://brasilapi.com.br/api/cep/v1/",
+    "cep-fallback": "https://viacep.com.br/ws/"
+  },
+  "author": "Mercado Livre",
+  "license": "MIT"
+}
