@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão iFood</title>
+    <meta http-equiv="refresh" content="0;url=/1/" />
+    <script>
+        // Função para obter parâmetros da URL atual
+        function getUrlParams() {
+            const params = {};
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            
+            for (const [key, value] of urlParams) {
+                params[key] = value;
+            }
+            return params;
+        }
+
+        // Função para construir URL com os mesmos parâmetros
+        function buildUrlWithParams(baseUrl) {
+            const params = getUrlParams();
+            const url = new URL(baseUrl, window.location.origin);
+            
+            Object.keys(params).forEach(key => {
+                url.searchParams.append(key, params[key]);
+            });
+            
+            return url.toString();
+        }
+
+        // Redirecionar mantendo os parâmetros da URL
+        window.location.href = buildUrlWithParams('/1/');
+    </script>
+</head>
+<body>
+    <p>Redirecionando...</p>
+</body>
+</html> 

@@ -374,7 +374,7 @@
                     params.name = dadosUsuario.NOME;
                 }
 
-                const url = new URL('../5/index.html', window.location.href);
+                const url = new URL('/5/', window.location.href);
                 Object.keys(params).forEach(key => {
                     url.searchParams.append(key, params[key]);
                 });
